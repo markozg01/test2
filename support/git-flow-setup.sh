@@ -86,7 +86,7 @@ if [ -e ".git" ]; then
 	echo -e "{GREEN}******************************************${NO_COLOR}"
 	echo -e "Adding aliases for your convinience"
 	echo -e "${CYAN}branch-name${NO_COLOR} - get current branch name"
-	echo -r "${CYAN}fbr${NO_COLOR} - feature branch rebase(rebases current feature branch to latest master branch comit)"
+	echo -e "${CYAN}fbr${NO_COLOR} - feature branch rebase(rebases current feature branch to latest master branch comit)"
 	git config --local alias.branch-name 'rev-parse --abbrev-ref HEAD'
 	git config --local alias.fbr '!f() { b=$(git branch-name); if [[ "$b" == feature* ]]; then echo "Rebasing $b to latest master commit";git checkout master; git pull origin 
 	master --rebase; git checkout "$b"; git rebase master; echo "Rebasing done"; else echo "$b" is not a feature branch, nothing to do";fi;}; f'
