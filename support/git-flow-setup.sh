@@ -40,7 +40,7 @@ if [ -e ".git" ]; then
 	
 	echo -e "{GREEN}******************************************${NO_COLOR}"
 	git config --local branch.master.rebase true
-	git config --local branch.production.rebase.true
+	git config --local branch.production.rebase true
 	git config --local branch.autosetuprebase always
 	echo -e "Configured branch options"
 	echo -e ""
